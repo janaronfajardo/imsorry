@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f43f5e">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>I’m Sorry</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blush: {
+                50: '#fff1f3', 100: '#ffe4e8', 200: '#fecdd6', 300: '#fda4af', 400: '#fb7185', 500: '#f43f5e', 600: '#e11d48', 700: '#be123c', 800: '#9f1239', 900: '#881337'
+              }
+            },
+            boxShadow: {
+              glow: '0 0 30px rgba(244,63,94,0.35), 0 0 60px rgba(244,63,94,0.18)'
+            },
+            keyframes: {
+              float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+              fadeup: { '0%': { opacity: '0', transform: 'translateY(16px) scale(.98)' }, '100%': { opacity: '1', transform: 'translateY(0) scale(1)' } },
+              heartbeat: { '0%,28%,70%,100%': { transform: 'scale(1)' }, '14%': { transform: 'scale(1.12)' }, '42%': { transform: 'scale(1.08)' } },
+              shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+              shake: { '0%,100%': { transform: 'translateX(0)' }, '25%': { transform: 'translateX(-4px)' }, '75%': { transform: 'translateX(4px)' } },
+              pop: { '0%': { opacity: '0', transform: 'scale(.92)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+              wobble: {
+                '0%,100%': { transform: 'translateX(0) rotate(0deg)' },
+                '15%': { transform: 'translateX(-6px) rotate(-2deg)' },
+                '30%': { transform: 'translateX(6px) rotate(2deg)' },
+                '45%': { transform: 'translateX(-4px) rotate(-1deg)' },
+                '60%': { transform: 'translateX(4px) rotate(1deg)' },
+                '75%': { transform: 'translateX(-2px) rotate(-1deg)' }
+              }
+            },
+            animation: {
+              float: 'float 4s ease-in-out infinite',
+              'fade-up': 'fadeup .8s ease-out both',
+              heartbeat: 'heartbeat 1.6s ease-in-out infinite',
+              shimmer: 'shimmer 2.2s linear infinite',
+              shake: 'shake .4s ease-in-out 1',
+              pop: 'pop .3s ease-out both',
+              wobble: 'wobble .5s ease-in-out 1'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-dvh min-h-screen bg-gradient-to-b from-rose-50 via-rose-100 to-rose-50 text-rose-900 antialiased selection:bg-rose-300/60 selection:text-rose-900">
+    <canvas id="bg-canvas" class="fixed inset-0 -z-10 h-full w-full"></canvas>
+
+    <main class="relative flex min-h-dvh items-center justify-center p-4 transition-[filter,transform] duration-300 will-change-transform">
+      <div id="card" class="relative w-full max-w-xl rounded-3xl border border-white/40 bg-white/30 backdrop-blur-xl shadow-glow overflow-hidden">
+        <div aria-hidden="true" class="pointer-events-none absolute -inset-40 opacity-30">
+          <div class="absolute inset-0 bg-[radial-gradient(1200px_400px_at_50%_-20%,rgba(244,63,94,.15),transparent_60%)]"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer [background-size:200%_100%]"></div>
+        </div>
+
+        <section class="relative space-y-6 px-6 py-8 sm:px-8 sm:py-10">
+          <div class="flex items-center justify-center">
+            <div class="inline-flex items-center gap-3 rounded-full bg-white/60 px-4 py-2 text-rose-700 ring-1 ring-rose-200/70 animate-fade-up">
+              <svg class="h-4 w-4 text-rose-500 animate-heartbeat" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span class="text-xs font-medium tracking-wide">From my heart</span>
+            </div>
+          </div>
+
+          <header class="text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-br from-rose-600 via-rose-500 to-rose-700 bg-clip-text text-transparent animate-fade-up">I’m truly sorry</h1>
+            <p class="mt-3 text-rose-700/90 text-sm sm:text-base animate-fade-up">I messed up. I value you and what we have more than anything. If you’ll let me, I want to make it right.</p>
+          </header>
+
+          <div class="flex justify-center animate-fade-up">
+            <img class="w-full max-w-[150px] aspect-[150/185] rounded-xl object-contain ring-1 ring-white/50" src="1.gif" alt="Crying GIF">
+          </div>
+
+          <div class="space-y-4 text-base sm:text-lg text-rose-800 animate-fade-up leading-relaxed">
+            <p>My Love,</p>
+            <p>I just want to say sorry. I know I really messed up by forgetting our monthsarry, and I feel terrible about it. You didn’t deserve that. You always give me so much effort, and the least I could’ve done was remember something that matters to both of us.</p>
+            <p>I’m not making excuses. I should’ve done better, and I will do better. I just hope you know that I never forgot you. I love you, and I hate that I made you feel hurt.</p>
+            <p>I’m sorry, truly.</p>
+            <p class="font-semibold">— Aron</p>
+          </div>
+
+          <div class="flex justify-center animate-fade-up">
+            <img class="w-full max-w-[300px] aspect-[300/265] rounded-xl object-contain ring-1 ring-white/50" src="2.gif" alt="Asking for forgiveness GIF">
+          </div>
+
+          <div class="flex items-center justify-center gap-3 sm:gap-4 animate-fade-up">
+            <button id="btn-yes" class="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 via-rose-500 to-rose-600 px-5 py-3 text-white shadow-glow transition-all duration-300 will-change-transform hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/60">
+              <span class="relative z-10 font-semibold">bati nata</span>
+              <span class="absolute inset-0 rounded-xl bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+            </button>
+            <button id="btn-later" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-rose-700 ring-1 ring-rose-200/70 bg-white/60 transition-all duration-300 will-change-transform hover:bg-white/80 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-rose-200">
+              dili ko
+            </button>
+          </div>
+        </section>
+
+        <footer class="relative border-t border-white/40 bg-white/20 px-6 py-4 sm:px-8">
+          <p class="text-center text-xs sm:text-sm text-rose-700">This page is just the start. I’m committed to doing better, one day at a time.</p>
+        </footer>
+      </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden">
+      <div data-modal-backdrop class="absolute inset-0 bg-rose-950/70 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+      <div class="relative h-full w-full flex items-center justify-center p-4">
+        <div data-modal-panel class="w-full max-w-xl sm:max-w-2xl rounded-2xl shadow-2xl overflow-hidden bg-white/90 backdrop-blur-xl transform transition-all duration-300 opacity-0 scale-95 ring-1 ring-white/60">
+          <div class="relative">
+            <video id="apology-video" class="block w-full h-auto" controls playsinline preload="metadata" loop poster="https://dummyimage.com/1280x720/ffe5ea/ff3860&text=Your+Video+Here">
+              <source src="3.mp4" type="video/mp4" />
+            </video>
+            <button id="modal-close" class="absolute top-2 right-2 rounded-full bg-rose-600 text-white px-3 py-1.5 text-sm font-semibold shadow-lg hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-white/60">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
